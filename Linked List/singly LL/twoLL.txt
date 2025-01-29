@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+class node{
+        public:
+        int data;
+        node* next;
+
+        public:
+        node(int data1,node* next1){
+            data=data1;
+            next=next1; 
+        }
+    };
+node* constructarr2LL(vector<int> &arr){
+    int n=arr.size();
+    node* head=new node(arr[0],nullptr);
+    node* mover=head;
+    for(int i=1;i<n;i++){
+        node* temp=new node(arr[i],nullptr);
+        mover->next=temp;
+        mover=temp;
+    }
+    return head;
+}    
+//printing the LL
+void print(node* head){
+    while(head!=NULL){
+        cout<<head->data<<" ";
+        head=head->next;
+    }
+    cout<<endl;
+}
+//intersection of two LL
+
+int main(){
+    // vector<int> arr={2,3,4,5,6};
+    // node* head=constructarr2LL(arr);
+    vector<int> arr1={5,7,9};
+    vector<int> arr2={3,4,6};
+    node* head1=constructarr2LL(arr1);
+    node* head2=constructarr2LL(arr2);
+     return 0;
+}
